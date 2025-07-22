@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "image": "/items/staff.jpg",
+    "name": "Sagittarius Long Staff",
+    "category": "Staff",
+    "race": "European"
+  },
+  {
+    "id": 2,
+    "image": "/items/staff-2.jpg",
+    "name": "Pices Bronze Staff",
+    "category": "Staff",
+    "race": "European"
+  },
+  {
+    "id": 3,
+    "image": "/items/staff-3.jpg",
+    "name": "Gemini Soul Staff",
+    "category": "Staff",
+    "race": "European"
+  }
+]
