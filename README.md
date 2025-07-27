@@ -12,7 +12,7 @@ Trying to do realistic SRO alchemy system but still in working on it.
 
 ```bash
 # Clone project
-git clone [repo-url]
+git clone https://github.com/necipkoc/silkroad-alchemy-app.git
 
 # Install dependencies
 npm install
