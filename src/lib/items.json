@@ -19,5 +19,82 @@
     "name": "Gemini Soul Staff",
     "category": "Staff",
     "race": "European"
+  },
+  {
+    "id": 4,
+    "image": "/items/staff-04.jpg",
+    "name": "Aries Wing Staff",
+    "category": "Staff",
+    "race": "European"
+  },
+  {
+    "id": 5,
+    "image": "/items/staff-05.jpg",
+    "name": "Aquarius Mystic Staff",
+    "category": "Staff",
+    "race": "European"
+  },
+  {
+    "id": 6,
+    "image": "/items/staff-06.jpg",
+    "name": "Cancer Blood Flare",
+    "category": "Staff",
+    "race": "European"
+  },
+  {
+    "id": 7,
+    "image": "/items/staff-07.jpg",
+    "name": "Libra Pentacle Ornament",
+    "category": "Staff",
+    "race": "European"
+  },
+  {
+    "id": 8,
+    "image": "/items/staff-08.jpg",
+    "name": "Scorpio Magician Glacier",
+    "category": "Staff",
+    "race": "European"
+  },
+  {
+    "id": 9,
+    "image": "/items/staff-09.jpg",
+    "name": "Taurus Soul Fiend",
+    "category": "Staff",
+    "race": "European"
+  },
+  {
+    "id": 10,
+    "image": "/items/staff-10.jpg",
+    "name": "Capricorn Arcane Hazard",
+    "category": "Staff",
+    "race": "European"
+  },
+  {
+    "id": 11,
+    "image": "/items/staff-11.jpg",
+    "name": "Amooterium",
+    "category": "Staff",
+    "race": "European"
+  },
+  {
+    "id": 12,
+    "image": "/items/staff-12.jpg",
+    "name": "Nephthyras",
+    "category": "Staff",
+    "race": "European"
+  },
+  {
+    "id": 13,
+    "image": "/items/staff-13.jpg",
+    "name": "Evil Soul Rising",
+    "category": "Staff",
+    "race": "European"
+  },
+  {
+    "id": 14,
+    "image": "/items/staff-14.jpg",
+    "name": "Dragonet Soul",
+    "category": "Staff",
+    "race": "European"
   }
 ]
