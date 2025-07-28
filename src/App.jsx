@@ -37,6 +37,7 @@ function App() {
   const [selectedItem, setSelectedItem] = useState(null);
   const [selectedElixir, setSelectedElixir] = useState(null);
   const [itemHover, setItemHover] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState(null);
   const [weaponLevel, setWeaponLevel] = useState(0);
   const [isStrengthening, setIsStrengthening] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -160,16 +161,28 @@ function App() {
                               {weaponLevel > 0 ? `(+${weaponLevel})` : ""}
                             </div>
                           </div>
-                          <div className="mb-0.5">
-                            Category:
+                          <div className="mb-1">
+                            Psychical Attack:{" "}
                             <span className="font-semibold">
-                              {selectedItem.category}
+                              {selectedItem.psy_attack}
+                            </span>
+                          </div>
+                          <div className="mb-1">
+                            Magical Attack:{" "}
+                            <span className="font-semibold">
+                              {selectedItem.mag_attack}
+                            </span>
+                          </div>
+                          <div className="mb-8">
+                            Durability:{" "}
+                            <span className="font-semibold">
+                              {selectedItem.durability}
                             </span>
                           </div>
                           <div>
-                            Race:
+                            Level:{" "}
                             <span className="font-semibold">
-                              {selectedItem.race}
+                              {selectedItem.level}
                             </span>
                           </div>
                         </div>
@@ -283,26 +296,65 @@ function App() {
         </div>
 
         <div className="p-4 bg-gradient-to-br from-[#302d2c] via-[#232126] to-[#2b292a]">
-          <div className="border-4 border-[#6c6554] mb-8 py-2 px-4">
+          <div className="border-4 border-[#6c6554] mb-8 py-2 px-4 max-h-64 overflow-y-scroll">
             <h4 className="text-sm text-[#efffc5] font-bold mb-4">Weapons</h4>
-            <div className="flex gap-2 items-center flex-wrap">
-              {items.map((item) => (
-                <img
-                  key={item.id}
-                  src={item.image}
-                  alt={item.name}
-                  className={`cursor-pointer border-2 h-12 w-12 ${
-                    selectedItem && selectedItem.id === item.id
-                      ? "border-yellow-400"
-                      : "border-transparent"
-                  } rounded`}
-                  onClick={() => {
-                    setSelectedItem(item);
-                    setWeaponLevel(0);
-                  }}
-                />
-              ))}
-            </div>
+            {Object.entries(items[0].eu).map(([categoryKey, categoryItems]) => (
+              <div key={categoryKey} className="mb-4">
+                <h5 className="text-xs text-[#c4c4c4] font-semibold mb-2 uppercase underline">
+                  {categoryKey}
+                </h5>
+                <div className="flex gap-2 items-center flex-wrap">
+                  {categoryItems.map((item) => (
+                    <div key={item.id} className="relative">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className={`cursor-pointer border-2 h-12 w-12 ${
+                          selectedItem && selectedItem.id === item.id
+                            ? "border-yellow-400"
+                            : "border-transparent"
+                        } rounded`}
+                        onClick={() => {
+                          setSelectedItem(item);
+                          setWeaponLevel(0);
+                        }}
+                        onMouseEnter={() => setHoveredItem(item.id)}
+                        onMouseLeave={() => setHoveredItem(null)}
+                      />
+                      {hoveredItem === item.id && (
+                        <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 min-w-[300px] bg-[#00174e]/50 text-white rounded-lg shadow-lg p-3 z-10 text-xs backdrop-blur-sm border border-slate-600">
+                          <div className="font-bold text-sm mb-2">
+                            {item.name}
+                          </div>
+                          <div className="mb-1">
+                            Psychical Attack:{" "}
+                            <span className="font-semibold">
+                              {item.psy_attack}
+                            </span>
+                          </div>
+                          <div className="mb-1">
+                            Magical Attack:{" "}
+                            <span className="font-semibold">
+                              {item.mag_attack}
+                            </span>
+                          </div>
+                          <div className="mb-8">
+                            Durability:{" "}
+                            <span className="font-semibold">
+                              {item.durability}
+                            </span>
+                          </div>
+                          <div>
+                            Level:{" "}
+                            <span className="font-semibold">{item.level}</span>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
           <div className="border-4 border-[#6c6554] mb-8 p-4">
             <h4 className="text-sm text-[#efffc5] font-bold mb-4">Alchemy</h4>
